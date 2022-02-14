@@ -1,5 +1,7 @@
 #!!! ВАЖНО !!!! в этот момент во всех сетях должен быть одинаковый nonce
+cd ./cb-sol-cli/
 set -a; source ../chainbridge.env; set +a
+
 # deploy the bridge contract and ERC20 handler contract on the source (Rinkeby)¶
 #nonce = 65
 cb-sol-cli --url $GATEWAY_RINKEBY --privateKey $PK --gasPrice 10000000000 deploy \

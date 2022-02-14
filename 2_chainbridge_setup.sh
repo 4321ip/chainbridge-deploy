@@ -1,4 +1,4 @@
-
+cd ./cb-sol-cli/
 set -a; source ../chainbridge.env; set +a
 #//---------------source-----------------
 #2. Configure contracts on Source (Note: Sometimes the transaction confirmation will not be detected by the CLI. You can check the txhash in etherscan)
