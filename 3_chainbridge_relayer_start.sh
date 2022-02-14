@@ -158,7 +158,7 @@ cd /home/node/chainbridge/chainbridge
 #&& cd chainbridge \
 #&& make build
 
-#export RELAYER_PK="<private key for wallet>"  #RELAYER_PK1 RELAYER_PK2 RELAYER_PK3
+#export RELAYER_PK1="<private key for wallet>"  #RELAYER_PK1 RELAYER_PK2 RELAYER_PK3
 #./build/chainbridge accounts import --privateKey $RELAYER_PK1
 #./build/chainbridge accounts import --privateKey $RELAYER_PK2
 #./build/chainbridge accounts import --privateKey $RELAYER_PK3
