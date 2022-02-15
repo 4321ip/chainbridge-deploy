@@ -1,0 +1,49 @@
+{
+  "chains": [
+    {
+      "name": "rinkeby",
+      "type": "ethereum",
+      "id": "0",
+      "endpoint": "wss://rinkeby.infura.io/ws/v3/e1f7ffd3c91d4f0a923a0a5fa38f5f8e",
+      "from": "0x48AfaaEA4668Cd4870f683Fd429320588b74864D",
+      "opts": {
+        "bridge": "0xd1fD93353B484C60D1e8B4c8fB9E2A823a95cdDB",
+        "erc20Handler": "0x72a459e8561761Fdf0ab2ecce2AC901E1d493C4E",
+        "erc721Handler": "0x99123Ca5b384d83cD6F4FD836742C327d402C263",
+        "genericHandler": "0x72a459e8561761Fdf0ab2ecce2AC901E1d493C4E",
+        "gasLimit": "1000000",
+        "maxGasPrice": "10000000000"
+      }
+    },
+    {
+      "name": "binance",
+      "type": "ethereum",
+      "id": "1",
+      "endpoint": "wss://bsc.getblock.io/testnet/?api_key=21bd5fd8-7708-46de-a75f-f826f038c42d",
+      "from": "0x48AfaaEA4668Cd4870f683Fd429320588b74864D",
+      "opts": {
+        "bridge": "0xd1fD93353B484C60D1e8B4c8fB9E2A823a95cdDB",
+        "erc20Handler": "0x72a459e8561761Fdf0ab2ecce2AC901E1d493C4E",
+        "erc721Handler": "0x99123Ca5b384d83cD6F4FD836742C327d402C263",
+        "genericHandler": "0x72a459e8561761Fdf0ab2ecce2AC901E1d493C4E",
+        "gasLimit": "1000000",
+        "maxGasPrice": "10000000000"
+      }
+    },
+    {
+      "name": "polygon",
+      "type": "ethereum",
+      "id": "2",
+      "endpoint": "wss://polygon-mumbai.g.alchemy.com/v2/zrBXGOevHn7SXCaK8I41dLfcTRQeiB9H",
+      "from": "0x48AfaaEA4668Cd4870f683Fd429320588b74864D",
+      "opts": {
+        "bridge": "0xd1fD93353B484C60D1e8B4c8fB9E2A823a95cdDB",
+        "erc20Handler": "0x72a459e8561761Fdf0ab2ecce2AC901E1d493C4E",
+        "erc721Handler": "0x99123Ca5b384d83cD6F4FD836742C327d402C263",
+        "genericHandler": "0x72a459e8561761Fdf0ab2ecce2AC901E1d493C4E",
+        "gasLimit": "1000000",
+        "maxGasPrice": "10000000000"
+      }
+    }
+  ]
+}

@@ -13,9 +13,8 @@ echo "{
       \"from\": \"$RELAYER_ADDR1\",
       \"opts\": {
         \"bridge\": \"$BRIDGE\",
-        \"erc20Handler\": \"$HANDLER_ERC20\",
-        \"erc721Handler\": \"$HANDLER_ERC721\",
-        \"genericHandler\": \"$HANDLER_ERC20\",
+        \"erc20Handler\": \"$HANDLER\",
+        \"genericHandler\": \"$HANDLER\",
         \"gasLimit\": \"1000000\",
         \"maxGasPrice\": \"10000000000\"
       }
@@ -28,9 +27,8 @@ echo "{
       \"from\": \"$RELAYER_ADDR1\",
       \"opts\": {
         \"bridge\": \"$BRIDGE\",
-        \"erc20Handler\": \"$HANDLER_ERC20\",
-        \"erc721Handler\": \"$HANDLER_ERC721\",
-        \"genericHandler\": \"$HANDLER_ERC20\",
+        \"erc20Handler\": \"$HANDLER\",
+        \"genericHandler\": \"$HANDLER\",
         \"gasLimit\": \"1000000\",
         \"maxGasPrice\": \"10000000000\"
       }
@@ -43,9 +41,8 @@ echo "{
       \"from\": \"$RELAYER_ADDR1\",
       \"opts\": {
         \"bridge\": \"$BRIDGE\",
-        \"erc20Handler\": \"$HANDLER_ERC20\",
-        \"erc721Handler\": \"$HANDLER_ERC721\",
-        \"genericHandler\": \"$HANDLER_ERC20\",
+        \"erc20Handler\": \"$HANDLER\",
+        \"genericHandler\": \"$HANDLER\",
         \"gasLimit\": \"1000000\",
         \"maxGasPrice\": \"10000000000\"
       }
@@ -62,9 +59,8 @@ echo "{
       \"from\": \"$RELAYER_ADDR2\",
       \"opts\": {
         \"bridge\": \"$BRIDGE\",
-        \"erc20Handler\": \"$HANDLER_ERC20\",
-        \"erc721Handler\": \"$HANDLER_ERC721\",
-        \"genericHandler\": \"$HANDLER_ERC20\",
+        \"erc20Handler\": \"$HANDLER\",
+        \"genericHandler\": \"$HANDLER\",
         \"gasLimit\": \"1000000\",
         \"maxGasPrice\": \"10000000000\"
       }
@@ -77,9 +73,8 @@ echo "{
       \"from\": \"$RELAYER_ADDR2\",
       \"opts\": {
         \"bridge\": \"$BRIDGE\",
-        \"erc20Handler\": \"$HANDLER_ERC20\",
-        \"erc721Handler\": \"$HANDLER_ERC721\",
-        \"genericHandler\": \"$HANDLER_ERC20\",
+        \"erc20Handler\": \"$HANDLER\",
+        \"genericHandler\": \"$HANDLER\",
         \"gasLimit\": \"1000000\",
         \"maxGasPrice\": \"10000000000\"
       }
@@ -92,9 +87,8 @@ echo "{
       \"from\": \"$RELAYER_ADDR2\",
       \"opts\": {
         \"bridge\": \"$BRIDGE\",
-        \"erc20Handler\": \"$HANDLER_ERC20\",
-        \"erc721Handler\": \"$HANDLER_ERC721\",
-        \"genericHandler\": \"$HANDLER_ERC20\",
+        \"erc20Handler\": \"$HANDLER\",
+        \"genericHandler\": \"$HANDLER\",
         \"gasLimit\": \"1000000\",
         \"maxGasPrice\": \"10000000000\"
       }
@@ -111,9 +105,8 @@ echo "{
       \"from\": \"$RELAYER_ADDR3\",
       \"opts\": {
         \"bridge\": \"$BRIDGE\",
-        \"erc20Handler\": \"$HANDLER_ERC20\",
-        \"erc721Handler\": \"$HANDLER_ERC721\",
-        \"genericHandler\": \"$HANDLER_ERC20\",
+        \"erc20Handler\": \"$HANDLER\",
+        \"genericHandler\": \"$HANDLER\",
         \"gasLimit\": \"1000000\",
         \"maxGasPrice\": \"10000000000\"
       }
@@ -126,9 +119,8 @@ echo "{
       \"from\": \"$RELAYER_ADDR3\",
       \"opts\": {
         \"bridge\": \"$BRIDGE\",
-        \"erc20Handler\": \"$HANDLER_ERC20\",
-        \"erc721Handler\": \"$HANDLER_ERC721\",
-        \"genericHandler\": \"$HANDLER_ERC20\",
+        \"erc20Handler\": \"$HANDLER\",
+        \"genericHandler\": \"$HANDLER\",
         \"gasLimit\": \"1000000\",
         \"maxGasPrice\": \"10000000000\"
       }
@@ -141,9 +133,8 @@ echo "{
       \"from\": \"$RELAYER_ADDR3\",
       \"opts\": {
         \"bridge\": \"$BRIDGE\",
-        \"erc20Handler\": \"$HANDLER_ERC20\",
-        \"erc721Handler\": \"$HANDLER_ERC721\",
-        \"genericHandler\": \"$HANDLER_ERC20\",
+        \"erc20Handler\": \"$HANDLER\",
+        \"genericHandler\": \"$HANDLER\",
         \"gasLimit\": \"1000000\",
         \"maxGasPrice\": \"10000000000\"
       }
@@ -172,4 +163,4 @@ cd /home/node/chainbridge/chainbridge
 #./build/chainbridge accounts import --privateKey $RELAYER_PK2
 #./build/chainbridge accounts import --privateKey $RELAYER_PK3
 
-./build/chainbridge --config config3.json --verbosity info --latest
+./build/chainbridge --config config1.json --verbosity trace --latest
