@@ -8,18 +8,18 @@ cb-sol-cli --url $GATEWAY_RINKEBY --privateKey $PK --gasPrice 10000000000 bridge
 cb-sol-cli --url $GATEWAY_RINKEBY --privateKey $PK --gasPrice 10000000000 bridge register-resource \
     --bridge $BRIDGE --handler $HANDLER_ERC20 --targetContract $TOKEN_ERC20 --resourceId $RESOURCE_ID_ERC20_RINKEBY_POLYGON
 cb-sol-cli --url $GATEWAY_RINKEBY --privateKey $PK --gasPrice 10000000000 bridge register-resource \
-    --bridge $BRIDGE --handler $HANDLER_ERC20 --targetContract $WRAPPED_TOKEN_ERC20 --resourceId $RESOURCE_ID_ERC20_RINKEBY_BINANCE
+    --bridge $BRIDGE --handler $HANDLER_ERC20 --targetContract $WRAPPED_TOKEN_ERC20 --resourceId $RESOURCE_ID_ERC20_BINANCE_RINKEBY
 cb-sol-cli --url $GATEWAY_RINKEBY --privateKey $PK --gasPrice 10000000000 bridge register-resource \
-    --bridge $BRIDGE --handler $HANDLER_ERC20 --targetContract $WRAPPED_TOKEN_ERC20 --resourceId $RESOURCE_ID_ERC20_RINKEBY_POLYGON
+    --bridge $BRIDGE --handler $HANDLER_ERC20 --targetContract $WRAPPED_TOKEN_ERC20 --resourceId $RESOURCE_ID_ERC20_POLYGON_RINKEBY
 
 cb-sol-cli --url $GATEWAY_RINKEBY --privateKey $PK --gasPrice 10000000000 bridge register-resource \
     --bridge $BRIDGE --handler $HANDLER_ERC721 --resourceId $RESOURCE_ID_ERC721_RINKEBY_BINANCE
 cb-sol-cli --url $GATEWAY_RINKEBY --privateKey $PK --gasPrice 10000000000 bridge register-resource \
     --bridge $BRIDGE --handler $HANDLER_ERC721 --resourceId $RESOURCE_ID_ERC721_RINKEBY_POLYGON
 cb-sol-cli --url $GATEWAY_RINKEBY --privateKey $PK --gasPrice 10000000000 bridge register-resource \
-    --bridge $BRIDGE --handler $HANDLER_ERC721 --targetContract $WRAPPED_TOKEN_ERC721 --resourceId $RESOURCE_ID_ERC721_RINKEBY_BINANCE
+    --bridge $BRIDGE --handler $HANDLER_ERC721 --targetContract $WRAPPED_TOKEN_ERC721 --resourceId $RESOURCE_ID_ERC721_BINANCE_RINKEBY
 cb-sol-cli --url $GATEWAY_RINKEBY --privateKey $PK --gasPrice 10000000000 bridge register-resource \
-    --bridge $BRIDGE --handler $HANDLER_ERC721 --targetContract $WRAPPED_TOKEN_ERC721 --resourceId $RESOURCE_ID_ERC721_RINKEBY_POLYGON
+    --bridge $BRIDGE --handler $HANDLER_ERC721 --targetContract $WRAPPED_TOKEN_ERC721 --resourceId $RESOURCE_ID_ERC721_POLYGON_RINKEBY
 
 
 #---BINANCE-----
@@ -28,18 +28,18 @@ cb-sol-cli --url $GATEWAY_BINANCE --privateKey $PK --gasPrice 10000000000 bridge
 cb-sol-cli --url $GATEWAY_BINANCE --privateKey $PK --gasPrice 10000000000 bridge register-resource \
     --bridge $BRIDGE --handler $HANDLER_ERC20 --targetContract $TOKEN_ERC20 --resourceId $RESOURCE_ID_ERC20_BINANCE_POLYGON
 cb-sol-cli --url $GATEWAY_BINANCE --privateKey $PK --gasPrice 10000000000 bridge register-resource \
-    --bridge $BRIDGE --handler $HANDLER_ERC20 --targetContract $WRAPPED_TOKEN_ERC20 --resourceId $RESOURCE_ID_ERC20_BINANCE_RINKEBY
+    --bridge $BRIDGE --handler $HANDLER_ERC20 --targetContract $WRAPPED_TOKEN_ERC20 --resourceId $RESOURCE_ID_ERC20_RINKEBY_BINANCE
 cb-sol-cli --url $GATEWAY_BINANCE --privateKey $PK --gasPrice 10000000000 bridge register-resource \
-    --bridge $BRIDGE --handler $HANDLER_ERC20 --targetContract $WRAPPED_TOKEN_ERC20 --resourceId $RESOURCE_ID_ERC20_BINANCE_POLYGON
+    --bridge $BRIDGE --handler $HANDLER_ERC20 --targetContract $WRAPPED_TOKEN_ERC20 --resourceId $RESOURCE_ID_ERC20_POLYGON_BINANCE
 
 cb-sol-cli --url $GATEWAY_BINANCE --privateKey $PK --gasPrice 10000000000 bridge register-resource \
     --bridge $BRIDGE --handler $HANDLER_ERC721 --resourceId $RESOURCE_ID_ERC721_BINANCE_RINKEBY
 cb-sol-cli --url $GATEWAY_BINANCE --privateKey $PK --gasPrice 10000000000 bridge register-resource \
     --bridge $BRIDGE --handler $HANDLER_ERC721 --resourceId $RESOURCE_ID_ERC721_BINANCE_POLYGON
 cb-sol-cli --url $GATEWAY_BINANCE --privateKey $PK --gasPrice 10000000000 bridge register-resource \
-    --bridge $BRIDGE --handler $HANDLER_ERC721 --targetContract $WRAPPED_TOKEN_ERC721 --resourceId $RESOURCE_ID_ERC721_BINANCE_RINKEBY
+    --bridge $BRIDGE --handler $HANDLER_ERC721 --targetContract $WRAPPED_TOKEN_ERC721 --resourceId $RESOURCE_ID_ERC721_RINKEBY_BINANCE
 cb-sol-cli --url $GATEWAY_BINANCE --privateKey $PK --gasPrice 10000000000 bridge register-resource \
-    --bridge $BRIDGE --handler $HANDLER_ERC721 --targetContract $WRAPPED_TOKEN_ERC721 --resourceId $RESOURCE_ID_ERC721_BINANCE_POLYGON
+    --bridge $BRIDGE --handler $HANDLER_ERC721 --targetContract $WRAPPED_TOKEN_ERC721 --resourceId $RESOURCE_ID_ERC721_POLYGON_BINANCE
 
 
 #---POLYGON-----
@@ -48,19 +48,21 @@ cb-sol-cli --url $GATEWAY_POLYGON --privateKey $PK --gasPrice 10000000000 bridge
 cb-sol-cli --url $GATEWAY_POLYGON --privateKey $PK --gasPrice 10000000000 bridge register-resource \
     --bridge $BRIDGE --handler $HANDLER_ERC20 --targetContract $TOKEN_ERC20 --resourceId $RESOURCE_ID_ERC20_POLYGON_RINKEBY
 cb-sol-cli --url $GATEWAY_POLYGON --privateKey $PK --gasPrice 10000000000 bridge register-resource \
-    --bridge $BRIDGE --handler $HANDLER_ERC20 --targetContract $WRAPPED_TOKEN_ERC20 --resourceId $RESOURCE_ID_ERC20_POLYGON_BINANCE
+    --bridge $BRIDGE --handler $HANDLER_ERC20 --targetContract $WRAPPED_TOKEN_ERC20 --resourceId $RESOURCE_ID_ERC20_BINANCE_POLYGON
 cb-sol-cli --url $GATEWAY_POLYGON --privateKey $PK --gasPrice 10000000000 bridge register-resource \
-    --bridge $BRIDGE --handler $HANDLER_ERC20 --targetContract $WRAPPED_TOKEN_ERC20 --resourceId $RESOURCE_ID_ERC20_POLYGON_RINKEBY
+    --bridge $BRIDGE --handler $HANDLER_ERC20 --targetContract $WRAPPED_TOKEN_ERC20 --resourceId $RESOURCE_ID_ERC20_RINKEBY_POLYGON
 
 cb-sol-cli --url $GATEWAY_POLYGON --privateKey $PK --gasPrice 10000000000 bridge register-resource \
     --bridge $BRIDGE --handler $HANDLER_ERC721 --resourceId $RESOURCE_ID_ERC721_POLYGON_BINANCE
 cb-sol-cli --url $GATEWAY_POLYGON --privateKey $PK --gasPrice 10000000000 bridge register-resource \
     --bridge $BRIDGE --handler $HANDLER_ERC721 --resourceId $RESOURCE_ID_ERC721_POLYGON_RINKEBY
 cb-sol-cli --url $GATEWAY_POLYGON --privateKey $PK --gasPrice 10000000000 bridge register-resource \
-    --bridge $BRIDGE --handler $HANDLER_ERC721 --targetContract $WRAPPED_TOKEN_ERC721 --resourceId $RESOURCE_ID_ERC721_POLYGON_BINANCE
+    --bridge $BRIDGE --handler $HANDLER_ERC721 --targetContract $WRAPPED_TOKEN_ERC721 --resourceId $RESOURCE_ID_ERC721_BINANCE_POLYGON
 cb-sol-cli --url $GATEWAY_POLYGON --privateKey $PK --gasPrice 10000000000 bridge register-resource \
-    --bridge $BRIDGE --handler $HANDLER_ERC721 --targetContract $WRAPPED_TOKEN_ERC721 --resourceId $RESOURCE_ID_ERC721_POLYGON_RINKEBY
+    --bridge $BRIDGE --handler $HANDLER_ERC721 --targetContract $WRAPPED_TOKEN_ERC721 --resourceId $RESOURCE_ID_ERC721_RINKEBY_POLYGON
 
+ECHO 'COMPLETE'
+exit 1
 
 # 2 registers the token as mintable/burnable on the bridge.
 cb-sol-cli --url $GATEWAY_RINKEBY --privateKey $PK --gasPrice 10000000000 bridge set-burn \
