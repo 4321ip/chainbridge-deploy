@@ -19,17 +19,17 @@ cb-sol-cli --url $GATEWAY_POLYGON --privateKey $PK --gasPrice 10000000000 erc20 
 #Execute a deposit.
 cb-sol-cli --url $GATEWAY_RINKEBY --privateKey $PK --gasPrice 10000000000 erc20 deposit \
     --amount 100 \
-    --dest 1\
+    --dest 2\
     --bridge $BRIDGE \
     --recipient $ADDR \
-    --resourceId $RESOURCE_ID_ERC20_DIRECT
+    --resourceId $RESOURCE_ID_ERC20
 
 cb-sol-cli --url $GATEWAY_POLYGON --privateKey $PK --gasPrice 10000000000 erc20 deposit \
     --amount 100 \
     --dest 0\
     --bridge $BRIDGE \
     --recipient $ADDR \
-    --resourceId $RESOURCE_ID_ERC20_REVERSE
+    --resourceId $RESOURCE_ID_ERC20
 
 
 cb-sol-cli --url $GATEWAY_RINKEBY --privateKey $PK --gasPrice 10000000000 erc20 allowance \
