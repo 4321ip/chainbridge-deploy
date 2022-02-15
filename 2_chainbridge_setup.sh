@@ -61,8 +61,8 @@ cb-sol-cli --url $GATEWAY_POLYGON --privateKey $PK --gasPrice 10000000000 bridge
 cb-sol-cli --url $GATEWAY_POLYGON --privateKey $PK --gasPrice 10000000000 bridge register-resource \
     --bridge $BRIDGE --handler $HANDLER_ERC721 --targetContract $WRAPPED_TOKEN_ERC721 --resourceId $RESOURCE_ID_ERC721_RINKEBY_POLYGON
 
-ECHO 'COMPLETE'
-exit 1
+#ECHO 'COMPLETE'
+#exit 1
 
 # 2 registers the token as mintable/burnable on the bridge.
 cb-sol-cli --url $GATEWAY_RINKEBY --privateKey $PK --gasPrice 10000000000 bridge set-burn \
