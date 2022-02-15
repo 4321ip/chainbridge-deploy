@@ -18,14 +18,14 @@ cb-sol-cli --url $GATEWAY_POLYGON --privateKey $PK --gasPrice 10000000000 erc20 
 
 #Execute a deposit.
 cb-sol-cli --url $GATEWAY_RINKEBY --privateKey $PK --gasPrice 10000000000 erc20 deposit \
-    --amount 100 \
-    --dest 2\
+    --amount 22 \
+    --dest 1\
     --bridge $BRIDGE \
     --recipient $ADDR \
-    --resourceId $RESOURCE_ID_ERC20_RINKEBY_POLYGON
+    --resourceId $RESOURCE_ID_ERC20_RINKEBY_BINANCE
 
 cb-sol-cli --url $GATEWAY_POLYGON --privateKey $PK --gasPrice 10000000000 erc20 deposit \
-    --amount 100 \
+    --amount 111 \
     --dest 0\
     --bridge $BRIDGE \
     --recipient $ADDR \
@@ -37,3 +37,22 @@ cb-sol-cli --url $GATEWAY_RINKEBY --privateKey $PK --gasPrice 10000000000 erc20 
     --spender $HANDLER_ERC20 \
     --erc20Address $TOKEN_ERC20
 
+#Approve the handler on the destination chain to move tokens on our behalf (to burn them).
+cb-sol-cli --url $GATEWAY_POLYGON --privateKey $PK --gasPrice 10000000000 erc20 approve \
+    --amount 100 \
+    --erc20Address $WRAPPED_TOKEN_ERC20 \
+    --recipient $HANDLER_ERC20
+#Transfer the wrapped tokens back to the bridge.
+cb-sol-cli --url $GATEWAY_POLYGON --privateKey $PK --gasPrice 10000000000 erc20 deposit \
+    --amount 100 \
+    --dest 0 \
+    --bridge $BRIDGE \
+    --recipient $ADDR \
+    --resourceId $RESOURCE_ID_ERC20_RINKEBY_POLYGON
+
+
+
+cb-sol-cli --url $GATEWAY_RINKEBY --privateKey $PK --gasPrice 10000000000 erc20 allowance \
+    --owner $ADDR \
+    --spender $HANDLER_ERC20 \
+    --erc20Address $WRAPPED_TOKEN_ERC20

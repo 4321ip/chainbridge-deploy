@@ -1,5 +1,6 @@
 set -a; source ../chainbridge.env; set +a
 
+
 rm ../config1.json
 rm ../config2.json
 rm ../config3.json
@@ -156,10 +157,12 @@ echo "{
 
 #goto virtual machine for relayer
 sshfs root@95.216.69.163:/home/node/chainbridge/chainbridge ~/dev/blockchain/vm_relay_folder
-cp ../config1.json ~/dev/blockchain/vm_relay_folder
-cp ../config2.json ~/dev/blockchain/vm_relay_folder
-cp ../config3.json ~/dev/blockchain/vm_relay_folder
+cp ../config1.json ~/dev/blockchain/vm_relay_folder/config1.json
+cp ../config2.json ~/dev/blockchain/vm_relay_folder/config2.json
+cp ../config3.json ~/dev/blockchain/vm_relay_folder/config3.json
 
+
+# запустить в 3х консолях
 ssh root@95.216.69.163 && \
 cd /home/node/chainbridge/chainbridge
 
