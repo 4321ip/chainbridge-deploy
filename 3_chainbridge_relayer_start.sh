@@ -163,7 +163,3 @@ ssh root@95.216.69.163 'cd /home/node/chainbridge/chainbridge; docker build -t r
 ssh root@95.216.69.163 'cd /home/node/chainbridge/chainbridge; docker run -e PK='"'$RELAYER_PK1'"' -v $(pwd)/config1.json:/go/chainbridge/config.json  relayer'
 ssh root@95.216.69.163 'cd /home/node/chainbridge/chainbridge; docker run -e PK='"'$RELAYER_PK2'"' -v $(pwd)/config2.json:/go/chainbridge/config.json  relayer'
 ssh root@95.216.69.163 'cd /home/node/chainbridge/chainbridge; docker run -e PK='"'$RELAYER_PK3'"' -v $(pwd)/config3.json:/go/chainbridge/config.json  relayer'
-
-
-#docker build -t relayer  -f ./5_relayer_alpine.dockerfile .
-#docker run -it -d -e PK="$RELAYER_PK1" -v $(pwd)/config1.json:/go/chainbridge/config.json  relayer
