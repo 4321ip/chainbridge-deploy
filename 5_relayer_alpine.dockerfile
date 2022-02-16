@@ -19,5 +19,5 @@ RUN     git clone -b v1.1.1 --depth 1 https://github.com/ChainSafe/chainbridge \
 CMD cd /go/chainbridge && echo 'PK=' && echo $PK && \
     export KEYSTORE_PASSWORD="empty" && \
     build/chainbridge accounts import --privateKey $PK --password $KEYSTORE_PASSWORD && \
-    build/chainbridge --config config.json --verbosity trace --latest && \
+    build/chainbridge --config config.json --verbosity info --latest && \
     /bin/sh
