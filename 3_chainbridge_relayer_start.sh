@@ -1,9 +1,9 @@
-set -a; source ../chainbridge.env; set +a
+cd ../
 
-
-rm ../config1.json
-rm ../config2.json
-rm ../config3.json
+set -a; source ./chainbridge.env; set +a
+rm ./config1.json
+rm ./config2.json
+rm ./config3.json
 echo "{
   \"chains\": [
     {
@@ -52,7 +52,7 @@ echo "{
       }
     }
   ]
-}" >> ../config1.json
+}" >> ./config1.json
 echo "{
   \"chains\": [
     {
@@ -101,7 +101,7 @@ echo "{
       }
     }
   ]
-}" >> ../config2.json
+}" >> ./config2.json
 echo "{
   \"chains\": [
     {
@@ -150,29 +150,28 @@ echo "{
       }
     }
   ]
-}" >> ../config3.json
+}" >> ./config3.json
 
 
 
 
 #goto virtual machine for relayer
-sshfs root@95.216.69.163:/home/node/chainbridge/chainbridge ~/dev/blockchain/vm_relay_folder
-cp ../config1.json ~/dev/blockchain/vm_relay_folder/config1.json
-cp ../config2.json ~/dev/blockchain/vm_relay_folder/config2.json
-cp ../config3.json ~/dev/blockchain/vm_relay_folder/config3.json
+#sshfs root@95.216.69.163:/home/node/chainbridge/chainbridge ~/dev/blockchain/vm_relay_folder
+#cp ../config1.json ~/dev/blockchain/vm_relay_folder/config1.json
+#cp ../config2.json ~/dev/blockchain/vm_relay_folder/config2.json
+#cp ../config3.json ~/dev/blockchain/vm_relay_folder/config3.json
+
+scp ./config1.json root@95.216.69.163:/home/node/chainbridge/chainbridge/config1.json
+scp ./config2.json root@95.216.69.163:/home/node/chainbridge/chainbridge/config2.json
+scp ./config3.json root@95.216.69.163:/home/node/chainbridge/chainbridge/config3.json
+scp ./5_relayer_alpine.dockerfile root@95.216.69.163:/home/node/chainbridge/chainbridge/5_relayer_alpine.dockerfile
+
+set -a; source ./chainbridge.env; set +a
+ssh root@95.216.69.163 'cd /home/node/chainbridge/chainbridge; docker build -t relayer  -f ./5_relayer_alpine.dockerfile .'
+ssh root@95.216.69.163 'cd /home/node/chainbridge/chainbridge; docker run -d -e PK='"'$RELAYER_PK1'"' -v $(pwd)/config1.json:/go/chainbridge/config.json  relayer'
+ssh root@95.216.69.163 'cd /home/node/chainbridge/chainbridge; docker run -d -e PK='"'$RELAYER_PK2'"' -v $(pwd)/config2.json:/go/chainbridge/config.json  relayer'
+ssh root@95.216.69.163 'cd /home/node/chainbridge/chainbridge; docker run -d -e PK='"'$RELAYER_PK3'"' -v $(pwd)/config3.json:/go/chainbridge/config.json  relayer'
 
 
-# запустить в 3х консолях
-ssh root@95.216.69.163 && \
-cd /home/node/chainbridge/chainbridge
-
-#git clone -b v1.1.1 --depth 1 https://github.com/ChainSafe/chainbridge \
-#&& cd chainbridge \
-#&& make build
-
-#export RELAYER_PK1="<private key for wallet>"  #RELAYER_PK1 RELAYER_PK2 RELAYER_PK3
-#./build/chainbridge accounts import --privateKey $RELAYER_PK1
-#./build/chainbridge accounts import --privateKey $RELAYER_PK2
-#./build/chainbridge accounts import --privateKey $RELAYER_PK3
-
-./build/chainbridge --config config3.json --verbosity info --latest
+#docker build -t relayer  -f ./5_relayer_alpine.dockerfile .
+docker run -it -d -e PK="$RELAYER_PK1" -v $(pwd)/config1.json:/go/chainbridge/config.json  relayer
